@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        progress: plain
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+    working_dir: /app
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    command: npm start
