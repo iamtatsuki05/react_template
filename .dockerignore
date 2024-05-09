@@ -1,9 +1,6 @@
-html/*
-.DS_Store
-
-.venv
-*.swp
-.mypy_cache
-.pytest_cache
-.ipynb_checkpoints
-__pycache__
+*/node_modules/
+*/build/
+*/.git/
+.gitignore
+Dockerfile
+.editorconfig
