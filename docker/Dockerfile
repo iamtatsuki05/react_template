@@ -11,7 +11,7 @@ RUN apt-get update && \
     zip unzip \
     curl wget gnupg file tree \
     sudo && \
-    curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs && \
     apt-get install -y build-essential && \
     apt-get clean && \
@@ -23,6 +23,7 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY . /app
+COPY ./package.json ./package-lock.json .
+COPY ./src .
 
 RUN npm install
