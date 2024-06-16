@@ -10,7 +10,7 @@ on:
         default: false
         type: boolean
 jobs:
-  run_prettier:
+  run_test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
