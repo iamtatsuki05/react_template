@@ -21,8 +21,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier:write": "npx prettier --write .",
-    "prettier:check": "npx prettier --check ."
+    "lint:prettier": "prettier --check .",
+    "fix:prettier": "prettier --write .",
+    "lint:eslint": "eslint --ext \".js,.ts\" --ignore-path .gitignore .",
+    "fix:eslint": "npm run lint:eslint --fix",
+    "lint": "npm run lint:prettier && npm run lint:eslint",
+    "fix": "npm run fix:prettier && npm run fix:eslint"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +47,12 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^3.3.2"
+    "@eslint/compat": "^1.1.0",
+    "@eslint/js": "^9.5.0",
+    "eslint": "^9.5.0",
+    "eslint-plugin-react": "^7.34.2",
+    "globals": "^15.5.0",
+    "prettier": "^3.3.2",
+    "typescript-eslint": "^7.13.0"
   }
 }
